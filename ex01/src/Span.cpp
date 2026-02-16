@@ -28,6 +28,13 @@ void	Span::addNumber(int number)
 	this->storage_.insert(number);
 }
 
+void	Span::addRange(std::multiset<int>::iterator const& begin, std::multiset<int>::iterator const& end)
+{
+	if (this->storage_.size() + std::distance(begin, end) > this->N_)
+		throw tooManyNumbersException();
+	this->storage_.insert(begin, end);
+}
+
 unsigned int	Span::shortestSpan(void) const
 {
 	unsigned int					min_span = this->longestSpan();

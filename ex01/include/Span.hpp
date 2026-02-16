@@ -23,6 +23,7 @@ class Span
 		Span& operator=(Span const& toCopy);
 
 		void	addNumber(int number);
+		void	addRange(std::multiset<int>::iterator const& begin, std::multiset<int>::iterator const& end);
 
 		unsigned int	shortestSpan(void) const;
 		unsigned int	longestSpan(void) const;
