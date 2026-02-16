@@ -36,7 +36,7 @@ unsigned int	Span::shortestSpan(void) const
 	std::multiset<int>::iterator	next = it;
 
 	++next;
-	while (it != this->storage_.end())
+	while (next != this->storage_.end())
 	{
 		current_span = *next - *it;
 		if (current_span < min_span)
@@ -53,14 +53,15 @@ unsigned int	Span::longestSpan(void) const
 	{
 		throw notEnoughNumbersException();
 	}
-	return (*this->storage_.end() - *this->storage_.begin());
+	return (*--this->storage_.end() - *this->storage_.begin());
 }
 
 void	Span::print(void) const
 {
 	std::multiset<int>::iterator	it = this->storage_.begin();
+	std::multiset<int>::iterator	end = --this->storage_.end();
 
-	while (it != this->storage_.end())
+	while (it != end)
 	{
 		std::cout << *it << ' ';
 		++it;
