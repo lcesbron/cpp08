@@ -1,8 +1,18 @@
 #include "MutantStack.hpp"
 #include <iostream>
 
-int main()
+static void	printTestHeader(std::string name)
 {
+	static unsigned int n = 1;
+
+	std::cout << std::endl << "----------" << n << ' ' << name << " ----------" << std::endl;
+	++n;
+}
+
+static void	subjectTest(void)
+{
+	printTestHeader("Subject Test");
+
 	MutantStack<int> mstack;
 
 	mstack.push(5);
@@ -32,4 +42,36 @@ int main()
 	}
 	std::stack<int> s(mstack);
 	return 0 ;
+}
+
+static void iteratorTest(void)
+{
+	printTestHeader("Iterator Test");
+
+	MutantStack<int>	s;
+
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	mstack.push(0);
+
+	MutantStack<int>::iterator	it1 = s.begin();
+	while (s != s.end())
+	{
+		std::cout << *s;
+		++s;
+	}
+	MutantStack<int>::iterator	it2 = s.end();
+	while (s != s.begin())
+	{
+		std::cout << *s;
+		--s;
+	}
+	std::cout << std::endl;
+}
+
+int main()
+{
+	subjectTest();
+	iteratorTest();
 }
