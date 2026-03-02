@@ -41,31 +41,58 @@ static void	subjectTest(void)
 		++it;
 	}
 	std::stack<int> s(mstack);
-	return 0 ;
 }
 
 static void iteratorTest(void)
 {
 	printTestHeader("Iterator Test");
 
-	MutantStack<int>	s;
+	MutantStack<int>	mstack;
 
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
 	mstack.push(0);
 
-	MutantStack<int>::iterator	it1 = s.begin();
-	while (s != s.end())
+	MutantStack<int>::iterator	it1 = mstack.begin();
+	while (it1 != mstack.end())
 	{
-		std::cout << *s;
-		++s;
+		std::cout << *it1 << std::endl;
+		++it1;
 	}
-	MutantStack<int>::iterator	it2 = s.end();
-	while (s != s.begin())
+	MutantStack<int>::iterator	it2 = mstack.end();
+	--it2;
+	while (it2 != mstack.begin())
 	{
-		std::cout << *s;
-		--s;
+		std::cout << *it2 << std::endl;
+		--it2;
+	}
+	std::cout << std::endl;
+}
+
+static void reverseIteratorTest(void)
+{
+	printTestHeader("Reverse Iterator Test");
+
+	MutantStack<int>	mstack;
+
+	mstack.push(3);
+	mstack.push(5);
+	mstack.push(737);
+	mstack.push(0);
+
+	MutantStack<int>::reverse_iterator	it1 = mstack.rbegin();
+	while (it1 != mstack.rend())
+	{
+		std::cout << *it1 << std::endl;
+		++it1;
+	}
+	MutantStack<int>::reverse_iterator	it2 = mstack.rend();
+	--it2;
+	while (it2 != mstack.rbegin())
+	{
+		std::cout << *it2 << std::endl;
+		--it2;
 	}
 	std::cout << std::endl;
 }
@@ -74,4 +101,5 @@ int main()
 {
 	subjectTest();
 	iteratorTest();
+	reverseIteratorTest();
 }

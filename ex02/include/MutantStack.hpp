@@ -1,7 +1,8 @@
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
 
-#include <stack>
+# include <stack>
+
 template <typename T>
 class MutantStack: public std::stack<T>
 {
@@ -24,7 +25,7 @@ class MutantStack: public std::stack<T>
 		reverse_iterator		rbegin(void);
 		reverse_iterator		rend(void);
 		const_reverse_iterator	crbegin(void);
-		const_reverse_iterator	cdrend(void);
+		const_reverse_iterator	crend(void);
 };
 
 # include "MutantStack.tpp"

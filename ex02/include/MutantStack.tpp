@@ -1,4 +1,7 @@
-#include "MutantStack.hpp"
+#ifndef MUTANTSTACK_TPP
+# define MUTANTSTACK_TPP
+
+# include "MutantStack.hpp"
 
 template <typename T>
 MutantStack<T>::MutantStack(void) {}
@@ -64,3 +67,5 @@ typename MutantStack<T>::const_reverse_iterator	MutantStack<T>::crend(void)
 {
 	return (this->c.crend());
 }
+
+#endif
