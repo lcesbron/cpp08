@@ -2,10 +2,10 @@
 # define EASYFIND_HPP
 
 template <class T>
-typename T::const_iterator	easyfind(T& container, int toFind)
+typename T::iterator	easyfind(T& container, int toFind)
 {
-	typename T::const_iterator	it = container.begin();
-	typename T::const_iterator	end = container.end();
+	typename T::iterator	it = container.begin();
+	typename T::iterator	end = container.end();
 
 	while (it < end)
 	{
