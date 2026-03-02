@@ -2,7 +2,7 @@
 #include <iostream>
 
 Span::Span(void):
-N_(DEFAULT_SPAN_ELEMS) {}
+N_(DEFAULT_SPAM_ELEMS) {}
 
 Span::Span(unsigned int N):
 N_(N) {}

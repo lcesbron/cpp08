@@ -7,7 +7,7 @@
 #include <set>
 # include <vector>
 
-# define DEFAULT_SPAN_ELEMS 10
+# define DEFAULT_SPAM_ELEMS 10
 
 class Span
 {
